@@ -6,23 +6,23 @@ import random as rdm
 window=tk.Tk()
 window.title('JUMBLED WORD GAME')
 window.geometry('250x200')
-
-# variable
+# list
 fruits=['Apple','Mango','Cherry','Pomegrenate','Kiwi','Banana','Apricot','Avocado','Papaya','Watermelon','Pineapple']
-
+# blank list
 word_list=[]
 num=rdm.randint(0,len(fruits)-1)
-
+# here is for loop to append shuffle words 
 for i in fruits:
     word=list(i)
     rdm.shuffle(word)
     word_list.append(word)
 
-# widget function
+ 
 def random_words():
     global word_list, num
     label3.config(text=word_list[num])
 
+# user input and then check it is correct or not 
 def check_ans():
     global word_list,num,fruits
     user_input1=entry1.get()
